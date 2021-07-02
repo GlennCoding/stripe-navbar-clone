@@ -11,12 +11,18 @@ const Template: Story<Props> = (args) => <Button {...args}>Sign In</Button>;
 
 export const Blue = Template.bind({});
 Blue.args = {
-  label: 'Sign in',
   color: 'blue',
+  showChevron: true,
 };
 
 export const Transparent = Template.bind({});
 Transparent.args = {
-  label: 'Sign in',
   color: 'gray',
+  showChevron: true,
+};
+
+export const WithoutChevron = Template.bind({});
+Transparent.args = {
+  color: 'gray',
+  showChevron: false,
 };
