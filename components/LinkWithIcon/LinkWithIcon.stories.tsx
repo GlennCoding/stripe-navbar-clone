@@ -5,13 +5,20 @@ import { MdWork } from 'react-icons/md';
 export default {
   component: LinkWithIcon,
   title: 'LinkWithIcon',
+  decorators: [
+    (Story) => (
+      <div className='bg-white p-10'>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const Template: Story<Props> = (args) => <LinkWithIcon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: <MdWork className='w-6 h-6' />,
+  icon: <MdWork className='w-5 h-5' />,
   title: 'Payments',
   link: '/',
   description: '',
@@ -32,6 +39,6 @@ Description.args = {
 export const LargeIconAndDescription = Template.bind({});
 LargeIconAndDescription.args = {
   ...Default.args,
-  icon: <MdWork className='w-12 h-12' />,
+  icon: <MdWork className='w-10 h-10' />,
   description: 'Online Payments',
 };
