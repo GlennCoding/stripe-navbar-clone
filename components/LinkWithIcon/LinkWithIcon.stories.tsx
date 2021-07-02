@@ -11,11 +11,10 @@ const Template: Story<Props> = (args) => <LinkWithIcon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: <MdWork size='28' />,
+  icon: <MdWork className='w-6 h-6' />,
   title: 'Payments',
   link: '/',
   description: '',
-  iconSize: 'small',
 };
 
 export const NoArrow = Template.bind({});
@@ -33,7 +32,6 @@ Description.args = {
 export const LargeIconAndDescription = Template.bind({});
 LargeIconAndDescription.args = {
   ...Default.args,
-  icon: <MdWork size='56' />,
+  icon: <MdWork className='w-12 h-12' />,
   description: 'Online Payments',
-  iconSize: 'large',
 };
