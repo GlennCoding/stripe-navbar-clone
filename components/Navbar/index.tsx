@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaStripe } from 'react-icons/fa';
+import { MdMenu } from 'react-icons/md';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import Button from '../Button';
 import ModalList from '../ModalList';
@@ -11,11 +12,12 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header className='flex justify-center'>
-        <div className='flex justify-between items-center px-4 py-3 w-full max-w-4xl'>
-          <div>
-            <FaStripe size='48' className='fill-current text-white' />
-          </div>
-          <div className='flex'>
+        <div className='flex justify-between items-center px-4 mx-4 py-3 w-full max-w-4xl'>
+          <FaStripe
+            size='48'
+            className='fill-current text-white cursor-pointer'
+          />
+          <div className='hidden md:flex'>
             <AnimateSharedLayout>
               {Object.entries(siteLinks).map((item) => {
                 const title = item[1].title;
@@ -43,7 +45,16 @@ const Navbar: React.FC = () => {
             </button>
           </div>
           <div>
-            <Button label='Sign in' color='gray' />
+            <div className='hidden md:block'>
+              <Button color='gray' showChevron={true}>
+                Sign in
+              </Button>
+            </div>
+            <div className='block md:hidden'>
+              <Button color='gray' showChevron={false}>
+                <MdMenu size='20' />
+              </Button>
+            </div>
           </div>
           <ModalList
             activeMenu={activeMenu}

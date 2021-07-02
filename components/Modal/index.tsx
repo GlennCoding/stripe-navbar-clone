@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const modal = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
-  hiddenDelay: { opacity: 0, transition: { delay: 1 } },
+  hiddenDelay: { opacity: 0, transition: { delay: 0.2 } },
 };
 
 const Modal: React.FC = ({ children }) => {

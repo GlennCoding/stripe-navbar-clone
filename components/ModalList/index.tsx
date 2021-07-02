@@ -59,14 +59,16 @@ const ModalList: React.FC<Props> = ({
             onMouseLeave={() => setActiveMenu('')}
           >
             <Modal>
-              {useCases.links.map((link, index) => (
-                <LinkWithIcon
-                  key={index}
-                  icon={link.icon}
-                  title={link.title}
-                  description={link.description}
-                />
-              ))}
+              <div className='grid grid-cols-2 gap-x-6'>
+                {useCases.links.map((link, index) => (
+                  <LinkWithIcon
+                    key={index}
+                    icon={link.icon}
+                    title={link.title}
+                    description={link.description}
+                  />
+                ))}
+              </div>
             </Modal>
           </div>
         ) : activeMenu === 'Developers' ? (
