@@ -1,13 +1,19 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Modal from './index';
+import Modal, { Props } from './index';
 
 export default {
   component: Modal,
   title: 'Modal',
 } as Meta;
 
-export const Default: Story = () => (
-  <Modal>
-    <p>Hello World</p>
-  </Modal>
-);
+const Template: Story<Props> = (args) => <Modal {...args}>Hello World</Modal>;
+
+export const Show = Template.bind({});
+Show.args = {
+  showModal: true,
+};
+
+export const Hide = Template.bind({});
+Hide.args = {
+  showModal: false,
+};
