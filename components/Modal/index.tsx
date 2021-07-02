@@ -1,17 +1,19 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const modal = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.3 } },
+  visible: { opacity: 1 },
+  hiddenDelay: { opacity: 0, transition: { delay: 1 } },
 };
+
 const Modal: React.FC = ({ children }) => {
   return (
     <motion.div
-      className={`shadow-lg p-10`}
+      className='shadow-lg px-6 py-7 bg-white rounded-lg absolute'
       variants={modal}
       initial='hidden'
       animate='visible'
-      exit='hidden'
+      exit='hiddenDelay'
     >
       {children}
     </motion.div>

@@ -6,9 +6,11 @@ export interface Props {
 }
 
 const Button: React.FC<Props> = ({ label, color }) => {
-  const bgColor = color === 'gray' ? 'bg-gray-50' : 'bg-blue-400';
+  const bgColor = color === 'gray' ? 'bg-white bg-opacity-25' : 'bg-indigo-500';
   return (
-    <button className={`inline-flex items-center shadow-md ${bgColor}`}>
+    <button
+      className={`inline-flex items-center px-5 py-1 rounded-full text-white ${bgColor}`}
+    >
       {label}
       <MdChevronRight />
     </button>
