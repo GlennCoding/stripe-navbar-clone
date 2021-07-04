@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import ModalList from '../SiteHeaderModals';
 import siteHeaderList from '../../constants/siteHeaderList';
+import rectangle from '../../public/rectangle.svg';
 
 const SiteHeaders: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string>('');
@@ -22,8 +24,15 @@ const SiteHeaders: React.FC = () => {
               {title === activeMenu && (
                 <motion.div
                   layoutId='hover'
-                  className='rounded-t-full absolute bg-white w-3 h-3 inset-x-2/4 top-12'
-                />
+                  className='absolute inset-x-2/4 w-full top-11'
+                >
+                  <Image
+                    src={rectangle}
+                    height={16}
+                    width={16}
+                    alt='rectangle'
+                  />
+                </motion.div>
               )}
             </div>
           );
