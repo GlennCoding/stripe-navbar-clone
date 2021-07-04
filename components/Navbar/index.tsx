@@ -1,7 +1,7 @@
 import { FaStripe } from 'react-icons/fa';
 import { MdMenu } from 'react-icons/md';
 import Button from '../Button';
-import SiteLinks from '../SiteLinks';
+import SiteHeaders from '../SiteHeaders';
 
 const Navbar: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
             <FaStripe size='48' />
           </div>
           <div className='hidden md:flex'>
-            <SiteLinks />
+            <SiteHeaders />
           </div>
           <div>
             <div className='hidden md:block'>

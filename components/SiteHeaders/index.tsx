@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import ModalList from '../ModalList';
-import siteLinks from '../../constants/siteLinks';
+import siteHeaderList from '../../constants/siteHeaderList';
 
-const SiteLinks: React.FC = () => {
+const SiteHeaders: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string>('');
   return (
     <>
       <AnimateSharedLayout>
-        {Object.entries(siteLinks).map((item) => {
-          const title = item[1].title;
+        {siteHeaderList.map((header) => {
+          const title = header.title;
           return (
             <div key={title} className='relative'>
               <button
@@ -35,10 +35,10 @@ const SiteLinks: React.FC = () => {
       <ModalList
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
-        siteLinks={siteLinks}
+        siteHeaderList={siteHeaderList}
       />
     </>
   );
 };
 
-export default SiteLinks;
+export default SiteHeaders;
