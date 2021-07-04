@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimateSharedLayout } from 'framer-motion';
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import ModalList from '../SiteHeaderModals';
 import siteHeaderList from '../../constants/siteHeaderList';
 
@@ -32,13 +32,15 @@ const SiteHeaders: React.FC = () => {
       <button className='px-5 py-3 cursor-pointer text-white font-medium'>
         <a href=''>Pricing</a>
       </button>
-      {activeMenu && (
-        <ModalList
-          activeMenu={activeMenu}
-          setActiveMenu={setActiveMenu}
-          siteHeaderList={siteHeaderList}
-        />
-      )}
+      <AnimatePresence>
+        {activeMenu && (
+          <ModalList
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            siteHeaderList={siteHeaderList}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };

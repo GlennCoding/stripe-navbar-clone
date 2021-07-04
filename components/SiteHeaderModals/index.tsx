@@ -2,7 +2,12 @@ import { Dispatch, SetStateAction } from 'react';
 import Modal from '../Modal';
 import LinkWithIcon from '../LinkWithIcon';
 import { SiteHeader } from '../../interfaces/siteHeader';
-import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+const modalAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 interface Props {
   activeMenu: string;
@@ -21,7 +26,13 @@ const ModalList: React.FC<Props> = ({
   const company = siteHeaderList[3];
 
   return (
-    <div className='absolute right-0 bottom-0 right-0 w-full top-16 flex justify-center items-start'>
+    <motion.div
+      className='absolute right-0 bottom-0 right-0 w-full top-16 flex justify-center items-start'
+      variants={modalAnimation}
+      initial='hidden'
+      animate='visible'
+      exit='hidden'
+    >
       <div
         onMouseEnter={() => setActiveMenu(activeMenu)}
         onMouseLeave={() => setActiveMenu('')}
@@ -84,7 +95,7 @@ const ModalList: React.FC<Props> = ({
           )}
         </Modal>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
