@@ -2,8 +2,8 @@ import { MdWork } from 'react-icons/md';
 
 const iconStyles = 'w-5 h-5';
 
-const siteLinks = {
-  products: {
+const siteHeaderList = [
+  {
     title: 'Products',
     links: [
       {
@@ -18,7 +18,7 @@ const siteLinks = {
       },
     ],
   },
-  useCases: {
+  {
     title: 'Use cases',
     links: [
       {
@@ -38,7 +38,7 @@ const siteLinks = {
       },
     ],
   },
-  developers: {
+  {
     title: 'Developers',
     links: [
       {
@@ -53,7 +53,7 @@ const siteLinks = {
       },
     ],
   },
-  company: {
+  {
     title: 'Company',
     links: [
       {
@@ -78,6 +78,6 @@ const siteLinks = {
       },
     ],
   },
-};
+];
 
-export default siteLinks;
+export default siteHeaderList;
