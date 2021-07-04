@@ -25,6 +25,8 @@ const SiteHeaders: React.FC = () => {
                 <motion.div
                   layoutId='hover'
                   className='absolute inset-x-2/4 w-full top-11'
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                 >
                   <Image
                     src={rectangle}
